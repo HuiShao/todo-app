@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useTodo } from '../../contexts/TodoContext';
-import { FiList, FiEdit2, FiTrash2, FiMoreVertical } from 'react-icons/fi';
+import { FiList, FiEdit2, FiTrash2 } from 'react-icons/fi';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Modal from '../ui/Modal';
-import { helpers } from '../../utils/helpers';
 
 const Sidebar: React.FC = () => {
   const { state, actions } = useTodo();

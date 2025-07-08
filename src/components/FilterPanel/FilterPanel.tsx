@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTodo } from '../../contexts/TodoContext';
-import { Priority, Status } from '../../types';
+import type { Priority, Status } from '../../types';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
-import Select from '../ui/Select';
 import { FiX, FiFilter } from 'react-icons/fi';
 import { helpers } from '../../utils/helpers';
 

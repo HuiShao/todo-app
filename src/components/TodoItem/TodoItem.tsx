@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { TodoItem as TodoItemType } from '../../types';
+import type { TodoItem as TodoItemType } from '../../types';
 import { useTodo } from '../../contexts/TodoContext';
-import { FiEdit2, FiTrash2, FiClock, FiCalendar, FiMoreVertical, FiCheck, FiX } from 'react-icons/fi';
+import { FiEdit2, FiTrash2, FiCalendar, FiCheck } from 'react-icons/fi';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 import Modal from '../ui/Modal';
 import TodoItemForm from './TodoItemForm';
 import { dateUtils } from '../../utils/dateUtils';
-import { helpers } from '../../utils/helpers';
 
 interface TodoItemProps {
   item: TodoItemType;

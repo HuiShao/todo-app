@@ -93,7 +93,6 @@ const Header: React.FC = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  as="span"
                   title="Import data"
                 >
                   <FiUpload className="w-4 h-4" />

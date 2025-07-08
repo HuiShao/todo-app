@@ -1,17 +1,16 @@
 import React, { useState, useMemo } from 'react';
 import { useTodo } from '../../contexts/TodoContext';
-import { FiPlus, FiSearch, FiFilter, FiGrid, FiList as FiListIcon } from 'react-icons/fi';
+import { FiPlus, FiSearch, FiFilter, FiList as FiListIcon } from 'react-icons/fi';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Select from '../ui/Select';
 import Modal from '../ui/Modal';
 import TodoItemForm from '../TodoItem/TodoItemForm';
-import TodoItem from '../TodoItem/TodoItem';
 import FilterPanel from '../FilterPanel/FilterPanel';
 import GroupPanel from '../GroupPanel/GroupPanel';
 import { helpers } from '../../utils/helpers';
 import { dateUtils } from '../../utils/dateUtils';
-import { TodoItem as TodoItemType, GroupBy } from '../../types';
+import type { TodoItem as TodoItemType, GroupBy } from '../../types';
 
 const TodoListView: React.FC = () => {
   const { state, actions } = useTodo();

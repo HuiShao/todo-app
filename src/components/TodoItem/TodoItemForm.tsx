@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TodoItem as TodoItemType, Priority, Status } from '../../types';
+import type { TodoItem as TodoItemType, Priority, Status } from '../../types';
 import { useTodo } from '../../contexts/TodoContext';
 import Button from '../ui/Button';
 import Input from '../ui/Input';

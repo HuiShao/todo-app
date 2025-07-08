@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoItem as TodoItemType } from '../../types';
+import type { TodoItem as TodoItemType } from '../../types';
 import TodoItem from '../TodoItem/TodoItem';
 import Button from '../ui/Button';
 import { FiCheckSquare, FiSquare } from 'react-icons/fi';
@@ -18,7 +18,7 @@ const GroupPanel: React.FC<GroupPanelProps> = ({
   items,
   selectedItems,
   onSelectItem,
-  onSelectAll,
+  onSelectAll: _onSelectAll,
   showGroupTitle = true,
 }) => {
   const allItemsSelected = items.length > 0 && items.every(item => selectedItems.includes(item.id));

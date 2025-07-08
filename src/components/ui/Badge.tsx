@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
-import { Priority, Status } from '../../types';
+import type { Priority, Status } from '../../types';
 
 interface BadgeProps {
   variant?: 'default' | 'priority' | 'status';

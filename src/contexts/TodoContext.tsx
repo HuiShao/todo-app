@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import { TodoItem, TodoList, AppState, FilterOptions, Priority, Status, GroupBy, Theme } from '../types';
+import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import type { TodoItem, TodoList, AppState, FilterOptions, Status, GroupBy, Theme } from '../types';
 import { storage } from '../utils/localStorage';
 import { helpers } from '../utils/helpers';
 

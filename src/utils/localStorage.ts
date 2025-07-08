@@ -1,4 +1,4 @@
-import { TodoList, AppState, ExportData } from '../types';
+import type { AppState, ExportData } from '../types';
 
 const STORAGE_KEY = 'todo-app-data';
 const THEME_KEY = 'todo-app-theme';

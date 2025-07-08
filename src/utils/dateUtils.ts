@@ -1,4 +1,4 @@
-import { format, isToday, isTomorrow, isThisWeek, isPast, isFuture, differenceInDays } from 'date-fns';
+import { format, isToday, isTomorrow, isThisWeek, isPast, differenceInDays } from 'date-fns';
 
 export const dateUtils = {
   // Format date for display

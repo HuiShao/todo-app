@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { TodoItem, TodoList, Priority, Status } from '../types';
+import type { TodoItem, TodoList, Priority, Status } from '../types';
 
 export const helpers = {
   // Generate unique ID
@@ -145,7 +145,7 @@ export const helpers = {
     func: T,
     wait: number
   ): ((...args: Parameters<T>) => void) => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
     
     return (...args: Parameters<T>) => {
       clearTimeout(timeout);
