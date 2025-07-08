@@ -6,20 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-        },
-        priority: {
-          high: '#ef4444',
-          medium: '#f59e0b',
-          low: '#10b981',
-        }
-      },
       animation: {
         'slide-in': 'slideIn 0.3s ease-out',
         'fade-in': 'fadeIn 0.2s ease-in',

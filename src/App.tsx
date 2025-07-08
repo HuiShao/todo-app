@@ -47,7 +47,7 @@ const AppContent: React.FC = () => {
   }, [actions, state.theme]);
 
   return (
-    <div className="h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900">
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
