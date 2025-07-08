@@ -53,7 +53,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                TodoApp
+                Shawn's TODO List App
               </h1>
               <Button
                 variant="primary"

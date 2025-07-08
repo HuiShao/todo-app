@@ -232,6 +232,10 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     
     if (savedTheme) {
       dispatch({ type: 'SET_THEME', payload: savedTheme as Theme });
+    } else {
+      // Initialize with system preference if no saved theme
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      dispatch({ type: 'SET_THEME', payload: systemPrefersDark ? 'dark' : 'light' });
     }
   }, []);
 
@@ -240,15 +244,16 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     storage.saveAppState(state);
   }, [state.lists, state.activeListId, state.groupBy, state.filters]);
 
-  // Save theme separately
+  // Save theme separately and apply to document
   useEffect(() => {
     storage.saveTheme(state.theme);
     
     // Apply theme to document
+    const html = document.documentElement;
     if (state.theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      html.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      html.classList.remove('dark');
     }
   }, [state.theme]);
 
