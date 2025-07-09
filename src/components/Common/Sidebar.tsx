@@ -62,14 +62,14 @@ const Sidebar: React.FC = () => {
                   key={list.id}
                   className={`group rounded-lg p-3 cursor-pointer transition-colors ${
                     isActive
-                      ? 'bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800'
+                      ? 'bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800'
                       : 'hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
                   onClick={() => !isEditing && actions.setActiveList(list.id)}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3 flex-1">
-                      <FiList className={`w-4 h-4 ${isActive ? 'text-primary-600' : 'text-gray-400'}`} />
+                      <FiList className={`w-4 h-4 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
                       
                       {isEditing ? (
                         <Input
@@ -89,7 +89,7 @@ const Sidebar: React.FC = () => {
                       ) : (
                         <div className="flex-1 min-w-0">
                           <p className={`text-sm font-medium truncate ${
-                            isActive ? 'text-primary-900 dark:text-primary-100' : 'text-gray-900 dark:text-white'
+                            isActive ? 'text-blue-900 dark:text-blue-100' : 'text-gray-900 dark:text-white'
                           }`}>
                             {list.name}
                           </p>
@@ -132,7 +132,7 @@ const Sidebar: React.FC = () => {
                     <div className="mt-2">
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1">
                         <div
-                          className="bg-primary-600 h-1 rounded-full transition-all duration-300"
+                          className="bg-blue-600 h-1 rounded-full transition-all duration-300"
                           style={{ width: `${(stats.completed / stats.total) * 100}%` }}
                         />
                       </div>

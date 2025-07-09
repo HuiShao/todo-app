@@ -18,36 +18,49 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     // Keyboard shortcuts
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey || event.metaKey) {
-        switch (event.key) {
-          case 'n':
+      // Only handle shortcuts when not typing in an input/textarea
+      const target = event.target as HTMLElement;
+      const isInputFocused = target.tagName === 'INPUT' || 
+                           target.tagName === 'TEXTAREA' || 
+                           target.contentEditable === 'true';
+      
+      if ((event.ctrlKey || event.metaKey) && !isInputFocused) {
+        switch (event.key.toLowerCase()) {
+          case 'l': {
             event.preventDefault();
-            // This would trigger new list creation
+            // Create a new list directly (Ctrl+L)
+            actions.createList(`New List ${state.lists.length + 1}`);
             break;
-          case 't':
+          }
+          case 'd': {
             event.preventDefault();
+            // Toggle dark/light theme (Ctrl+D)
             actions.setTheme(state.theme === 'light' ? 'dark' : 'light');
             break;
-          case 'f':
+          }
+          case 'k': {
             event.preventDefault();
-            // This would focus the search input
-            const searchInput = document.querySelector('input[placeholder*="Search"]') as HTMLInputElement;
+            // Focus the search input (Ctrl+K - common in many apps)
+            const searchInput = document.querySelector('input[placeholder*="Search"], input[placeholder*="search"]') as HTMLInputElement;
             if (searchInput) {
               searchInput.focus();
+              searchInput.select();
             }
             break;
+          }
         }
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
+    // Add event listener with capture to ensure it runs before other handlers
+    document.addEventListener('keydown', handleKeyDown, true);
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeyDown, true);
     };
-  }, [actions, state.theme]);
+  }, [actions, state.theme, state.lists.length]);
 
   return (
-    <div className="h-screen flex flex-col bg-zinc-50 dark:bg-zinc-900">
+    <div className="h-screen flex flex-col">
       <Header />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />

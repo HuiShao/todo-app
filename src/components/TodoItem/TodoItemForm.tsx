@@ -178,13 +178,13 @@ const TodoItemForm: React.FC<TodoItemFormProps> = ({
             {formData.labels.map((label) => (
               <span
                 key={label}
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200"
+                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
               >
                 {label}
                 <button
                   type="button"
                   onClick={() => handleRemoveLabel(label)}
-                  className="ml-1 text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-200"
+                  className="ml-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200"
                 >
                   <FiX className="w-3 h-3" />
                 </button>

@@ -1,61 +1,181 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    background: #fafafa;
+    transition: all 0.3s ease;
+  }
+  
+  html.dark {
+    background: #171717;
+  }
+  
   body {
-    @apply bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100;
-    @apply transition-colors duration-300;
+    background: #fafafa;
+    color: #171717;
+    transition: all 0.3s ease;
+    min-height: 100vh;
+  }
+  
+  .dark body {
+    background: #171717;
+    color: #fafafa;
+  }
+  
+  /* Ensure the root div takes full height */
+  #root {
+    min-height: 100vh;
+    background: inherit;
   }
   
   * {
-    @apply transition-colors duration-200;
+    transition: all 0.2s ease;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors;
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #2563eb;
   }
   
   .btn-secondary {
-    @apply bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-600 text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-lg transition-colors;
+    background: #e5e7eb;
+    color: #374151;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-secondary:hover {
+    background: #d1d5db;
+  }
+  
+  .dark .btn-secondary {
+    background: #374151;
+    color: #e5e7eb;
+  }
+  
+  .dark .btn-secondary:hover {
+    background: #4b5563;
   }
   
   .btn-danger {
-    @apply bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors;
+    background: #ef4444;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-danger:hover {
+    background: #dc2626;
   }
   
   .input-field {
-    @apply w-full px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded-lg;
-    @apply bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100;
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background: white;
+    color: #111827;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  
+  .dark .input-field {
+    background: #1f2937;
+    color: #f9fafb;
+    border-color: #4b5563;
   }
   
   .card {
-    @apply bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-zinc-200 dark:border-zinc-700;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+  }
+  
+  .dark .card {
+    background: #1f2937;
+    border-color: #374151;
   }
   
   .priority-high {
-    @apply bg-red-100 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300;
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+  }
+  
+  .dark .priority-high {
+    background: rgba(185, 28, 28, 0.2);
+    border-color: #991b1b;
+    color: #fca5a5;
   }
   
   .priority-medium {
-    @apply bg-yellow-100 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800 text-yellow-700 dark:text-yellow-300;
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
+  }
+  
+  .dark .priority-medium {
+    background: rgba(180, 83, 9, 0.2);
+    border-color: #92400e;
+    color: #fcd34d;
   }
   
   .priority-low {
-    @apply bg-green-100 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300;
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+  }
+  
+  .dark .priority-low {
+    background: rgba(22, 101, 52, 0.2);
+    border-color: #065f46;
+    color: #86efac;
   }
   
   .status-pending {
-    @apply bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300;
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+  
+  .dark .status-pending {
+    background: rgba(29, 78, 216, 0.2);
+    color: #93c5fd;
   }
   
   .status-in-progress {
-    @apply bg-orange-100 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300;
+    background: #fff7ed;
+    color: #c2410c;
+  }
+  
+  .dark .status-in-progress {
+    background: rgba(194, 65, 12, 0.2);
+    color: #fdba74;
   }
   
   .status-completed {
-    @apply bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300;
+    background: #f0fdf4;
+    color: #166534;
+  }
+  
+  .dark .status-completed {
+    background: rgba(22, 101, 52, 0.2);
+    color: #86efac;
   }
 }
 

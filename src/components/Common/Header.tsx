@@ -184,15 +184,15 @@ const Header: React.FC = () => {
             <div className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex justify-between">
                 <span>New List</span>
-                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + N</kbd>
+                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + L</kbd>
               </div>
               <div className="flex justify-between">
                 <span>Search</span>
-                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + F</kbd>
+                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + K</kbd>
               </div>
               <div className="flex justify-between">
                 <span>Toggle Theme</span>
-                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + T</kbd>
+                <kbd className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">Ctrl + D</kbd>
               </div>
             </div>
           </div>

@@ -48,7 +48,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
     <>
       <div
         className={`card p-4 transition-all duration-200 ${
-          selected ? 'ring-2 ring-primary-500' : ''
+          selected ? 'ring-2 ring-blue-500' : ''
         } ${item.status === 'completed' ? 'opacity-75' : ''}`}
       >
         <div className="flex items-start space-x-3">
@@ -58,7 +58,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
                 type="checkbox"
                 checked={selected}
                 onChange={handleSelect}
-                className="w-4 h-4 text-primary-600 rounded border-gray-300 focus:ring-primary-500"
+                className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
               />
             </div>
           )}
@@ -69,7 +69,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
               className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
                 item.status === 'completed'
                   ? 'bg-green-500 border-green-500 text-white'
-                  : 'border-gray-300 hover:border-primary-500'
+                  : 'border-gray-300 hover:border-blue-500'
               }`}
             >
               {item.status === 'completed' && <FiCheck className="w-3 h-3" />}

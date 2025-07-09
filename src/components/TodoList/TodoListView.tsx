@@ -186,7 +186,7 @@ const TodoListView: React.FC = () => {
             <Button
               variant="secondary"
               onClick={() => setShowFilters(!showFilters)}
-              className={showFilters ? 'bg-primary-100 dark:bg-primary-900' : ''}
+              className={showFilters ? 'bg-blue-100 dark:bg-blue-900' : ''}
             >
               <FiFilter className="w-4 h-4 mr-2" />
               Filters
@@ -211,10 +211,10 @@ const TodoListView: React.FC = () => {
         )}
 
         {selectedItems.length > 0 && (
-          <div className="bg-primary-50 dark:bg-primary-900/20 border-b border-primary-200 dark:border-primary-800 p-4">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border-b border-blue-200 dark:border-blue-800 p-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-                <span className="text-sm font-medium text-primary-900 dark:text-primary-100">
+                <span className="text-sm font-medium text-blue-900 dark:text-blue-100">
                   {selectedItems.length} items selected
                 </span>
                 <Button variant="ghost" size="sm" onClick={handleDeselectAll}>
@@ -248,7 +248,7 @@ const TodoListView: React.FC = () => {
           </div>
         )}
 
-        <div className="flex-1 overflow-auto p-4">
+        <div className="flex-1 overflow-auto p-4 bg-transparent">
           {filteredItems.length === 0 ? (
             <div className="text-center py-12">
               <FiListIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />

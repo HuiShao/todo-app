@@ -239,6 +239,29 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
     }
   }, []);
 
+  // Listen for system theme changes only when no manual theme preference exists
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      // Only update if no theme is manually saved
+      const currentSavedTheme = storage.loadTheme();
+      if (!currentSavedTheme) {
+        dispatch({ type: 'SET_THEME', payload: e.matches ? 'dark' : 'light' });
+      }
+    };
+    
+    // Only add listener if no saved theme exists initially
+    const initialSavedTheme = storage.loadTheme();
+    if (!initialSavedTheme) {
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+      
+      return () => {
+        mediaQuery.removeEventListener('change', handleSystemThemeChange);
+      };
+    }
+  }, []);
+
   // Save to localStorage whenever state changes
   useEffect(() => {
     storage.saveAppState(state);

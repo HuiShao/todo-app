@@ -83,7 +83,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onClose }) => {
     localFilters.dateRange.end;
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-4">
+    <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-medium text-gray-900 dark:text-white flex items-center">
           <FiFilter className="w-5 h-5 mr-2" />
@@ -111,7 +111,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onClose }) => {
                   type="checkbox"
                   checked={localFilters.priority.includes(priority)}
                   onChange={() => handlePriorityChange(priority)}
-                  className="w-4 h-4 text-primary-600 rounded border-gray-300 focus:ring-primary-500"
+                  className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
                 />
                 <span className="ml-2 text-sm text-gray-700 dark:text-gray-300 capitalize">
                   {priority}
@@ -133,7 +133,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onClose }) => {
                   type="checkbox"
                   checked={localFilters.status.includes(status)}
                   onChange={() => handleStatusChange(status)}
-                  className="w-4 h-4 text-primary-600 rounded border-gray-300 focus:ring-primary-500"
+                  className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
                 />
                 <span className="ml-2 text-sm text-gray-700 dark:text-gray-300 capitalize">
                   {status.replace('-', ' ')}
@@ -156,7 +156,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({ onClose }) => {
                     type="checkbox"
                     checked={localFilters.labels.includes(label)}
                     onChange={() => handleLabelChange(label)}
-                    className="w-4 h-4 text-primary-600 rounded border-gray-300 focus:ring-primary-500"
+                    className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                     {label}
